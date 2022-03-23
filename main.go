@@ -17,15 +17,14 @@ func ClearBit(x uint64, n int) uint64 {
 func FlipBit(x uint64, n int) uint64 {
 	return x ^ (1 << n)
 }
-func Ones(n uint64) uint64 {
-	var p, cnt uint64
-	for ; n >= (1 << p); p++ {
-		if (1 << p) == n&(1<<p) {
-			cnt++
-		}
+func Ones(n uint64) int {
+	var res uint64
+	for n != 0 {
+		res += n & 1
+		n = n >> 1
 	}
 
-	return cnt
+	return int(res)
 }
 func Reverse(n uint64) (res uint64) {
 	for i := 0; i < 64; i++ {
@@ -35,10 +34,14 @@ func Reverse(n uint64) (res uint64) {
 	return res
 }
 func LeadingZeroes(n uint64) int {
+
 	return TrailingZeroes(Reverse(n))
 }
 func TrailingZeroes(n uint64) int {
 	var p, cnt uint64
+	if n == 0 {
+		return 64
+	}
 	for ; n >= (1 << p); p++ {
 		if (1 << p) == n&(1<<p) {
 			return int(cnt)
@@ -57,6 +60,6 @@ func main() {
 	fmt.Println(FlipBit(657, 0))
 	fmt.Println(Ones(69))
 	fmt.Println(Reverse(13))
-	fmt.Println(LeadingZeroes(1))
-	fmt.Println(TrailingZeroes(100000003200))
+	fmt.Println(LeadingZeroes(0))
+	fmt.Println(TrailingZeroes(0))
 }
