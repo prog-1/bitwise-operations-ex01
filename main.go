@@ -63,7 +63,7 @@ func SetBit(x uint64, n int) uint64 {
 	return (1 << n) | x
 }
 func ClearBit(x uint64, n int) uint64 {
-	return x &^ (1 << n) //number &= ~(1UL << n);
+	return x &^ (1 << n)
 }
 func FlipBit(x uint64, n int) uint64 {
 	return x ^ (1 << n)
@@ -87,7 +87,7 @@ func LeadingZeroes(a uint64) int {
 func TrailingZeroes(a uint64) int {
 	return bits.TrailingZeros64(a)
 }
-func Powerof2() {
+func Powerof2() {//todo: connect with UI
 	fmt.Println("The program determines if a number is a power of 2.")
 	var n, i int
 	fmt.Print("Enter the number: ")
