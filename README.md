@@ -63,7 +63,7 @@ Implement the following functions using bitwise operations (and sometimes counte
    Reverse(0xff00000000000000) -> 0xff
    Reverse(0xff) -> 0xff00000000000000
    Reverse(0b1101) -> 0b1011000...00000
-   Reverse(13) -> 936748722493063168
+   Reverse(13) -> 12682136550675316736
    ```
    
 8. `func LeadingZeroes(uint64) int` returns the count of `0` preceding `1` in a number from the left.
