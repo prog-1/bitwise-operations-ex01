@@ -48,16 +48,10 @@ func UI() {
 	}
 }
 func Even(a uint64) bool {
-	if a&1 == 0 {
-		return true
-	}
-	return false
+	return a&1 == 0
 }
 func Odd(a uint64) bool {
-	if a&1 != 0 {
-		return true
-	}
-	return false
+	return a&1 != 0
 }
 func SetBit(x uint64, n int) uint64 {
 	return (1 << n) | x
@@ -81,13 +75,13 @@ func Ones(a uint64) (count int) {
 func Reverse(a uint64) uint64 {
 	return bits.ReverseBytes64(a)
 }
-func LeadingZeroes(a uint64) int {
+func LeadingZeroes(a uint64) int { // i dont really understood how the output supposed to be...
 	return bits.LeadingZeros64(a)
 }
 func TrailingZeroes(a uint64) int {
 	return bits.TrailingZeros64(a)
 }
-func Powerof2() {//todo: connect with UI
+func Powerof2() {
 	fmt.Println("The program determines if a number is a power of 2.")
 	var n, i int
 	fmt.Print("Enter the number: ")
@@ -96,7 +90,7 @@ func Powerof2() {//todo: connect with UI
 		for z := 1; z != n; z *= 2 {
 			i++
 		}
-		fmt.Printf("%v = 2^%v", n, i)
+		fmt.Printf("%v = 2^%v\n", n, i)
 	} else {
 		fmt.Println(n, "is not a power of 2.")
 	}
