@@ -111,7 +111,7 @@ func TestReverse(t *testing.T) {
 		{0xff00000000000000, 0xff},
 		{0xff, 0xff00000000000000},
 		{0, 0},
-		//{13, 12682136550675316736}, this test fails... why
+		{13, 12682136550675316736}, //hope now will work
 	} {
 		if got := Reverse(tc.a); got != tc.want {
 			t.Errorf("Fail: got %v want %v", got, tc.want)
