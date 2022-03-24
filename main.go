@@ -16,7 +16,7 @@ func SetBit(x uint64, n int) uint64 {
 	return x | (1 << n)
 }
 func ClearBit(x uint64, n int) uint64 {
-	return ^((^x) | (1 << n))
+	return x &^ (1 << n)
 }
 func FlipBit(x uint64, n int) uint64 {
 	return x ^ (1 << n)
