@@ -73,7 +73,7 @@ func Ones(a uint64) (count int) {
 	//bits.OnesCount64(a)
 }
 func Reverse(a uint64) uint64 {
-	return bits.ReverseBytes64(a)
+	return bits.Reverse64(a)
 }
 func LeadingZeroes(a uint64) int { // i dont really understood how the output supposed to be...
 	return bits.LeadingZeros64(a)
